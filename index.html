@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swalwa - Premium Gourmet Halwa</title>
+    <meta name="description" content="Discover the finest handcrafted halwa with flavour infusions. Premium Kerala-inspired gourmet sweets delivered to your door." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header class="header" id="mainHeader">
+        <div class="container">
+            <div class="header-inner">
+
+                <a href="#" class="logo" id="logoLink">
+                    <img src="images/logo.png" alt="Swalwa" />
+                    <span class="swal">Swa</span><span class="wa">lwa</span>
+                </a>
+
+                <div class="header-center">
+                    <div class="header-search">
+                        <input type="text" id="searchInput" placeholder="Search halwa..." aria-label="Search products" />
+                        <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <!-- Type Nav - hidden on mobile, shown in hamburger menu -->
+                    <nav class="type-nav" id="typeNav" aria-label="Product types">
+                        <button class="type-item active" data-type="all"><i class="fas fa-th-large"></i> All</button>
+                        <button class="type-item" data-type="bites"><i class="fas fa-candy-cane"></i> Bites</button>
+                        <button class="type-item" data-type="block"><i class="fas fa-cube"></i> Block</button>
+                        <button class="type-item" data-type="giftbox"><i class="fas fa-gift"></i> Gift Box</button>
+                    </nav>
+                </div>
+
+                <!-- Actions: Wishlist + Cart -->
+                <div class="header-actions">
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="action-btn" id="wishlistBtn" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge wishlist-badge" id="wishlistCount">0</span>
+                    </button>
+                    <button class="action-btn" id="cartBtn" aria-label="Cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge" id="cartCount">0</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    MOBILE MENU (slide-in)
+    ============================================================ -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <span class="mobile-logo">
+                    <img src="images/logo.png" alt="Swalwa" />
+                    <span class="swal">Swa</span><span class="wa">lwa</span>
+                </span>
+                <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="mobile-menu-items" id="mobileMenuItems">
+                <button class="type-item active" data-type="all"><i class="fas fa-th-large"></i> All</button>
+                <button class="type-item" data-type="bites"><i class="fas fa-candy-cane"></i> Bites</button>
+                <button class="type-item" data-type="block"><i class="fas fa-cube"></i> Block</button>
+                <button class="type-item" data-type="giftbox"><i class="fas fa-gift"></i> Gift Box</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main>
+
+        <!-- ---------- HOME VIEW ---------- -->
+        <div id="homeView">
+
+            <!-- Hero -->
+            <section class="container">
+                <div class="hero">
+                    <div class="hero-bg"></div>
+                    <div class="hero-content">
+                        <div class="badge-hero">✦ Artisanal Craftsmanship</div>
+                        <h1>Indulge in <span>Swalwa</span> Luxury</h1>
+                        <p>Handcrafted halwa in three exquisite forms: Bites, Blocks &amp; Gift Boxes. Premium infusions of rum, whiskey, brandy &amp; vodka elevate every bite.</p>
+                        <a href="#" class="btn-hero" id="heroShopBtn">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                        <div class="hero-stats">
+                            <div class="stat"><div class="num">50+</div><div class="label">Varieties</div></div>
+                            <div class="stat"><div class="num">4.9★</div><div class="label">Avg Rating</div></div>
+                            <div class="stat"><div class="num">2K+</div><div class="label">Happy Customers</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Promo Bar -->
+            <div class="container">
+                <div class="promo-bar">
+                    <span class="promo-item"><i class="fas fa-truck"></i> <strong>Free Shipping</strong> on orders above ₹999</span>
+                    <span class="promo-item"><i class="fas fa-gift"></i> <strong>Complimentary</strong> gift wrapping</span>
+                    <span class="promo-item"><i class="fas fa-clock"></i> <strong>Same-day</strong> dispatch</span>
+                    <span class="promo-item"><i class="fas fa-award"></i> <strong>100%</strong> natural ingredients</span>
+                </div>
+            </div>
+
+            <!-- Featured Products -->
+            <section class="container" id="featuredSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">Featured Swalwa</h2><p class="section-sub">Curated for the connoisseur</p></div>
+                    <a href="#" class="view-all" id="featuredViewAll">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid" id="featuredGrid"></div>
+            </section>
+
+            <!-- Trending -->
+            <section class="container" id="trendingSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">Trending Now</h2><p class="section-sub">Most loved by our community</p></div>
+                    <a href="#" class="view-all" id="trendingViewAll">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid" id="trendingGrid"></div>
+            </section>
+
+            <!-- Best Sellers -->
+            <section class="container" id="bestsellerSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">Best Sellers</h2><p class="section-sub">Customer favourites</p></div>
+                    <a href="#" class="view-all" id="bestsellerViewAll">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid" id="bestsellerGrid"></div>
+            </section>
+
+            <!-- Testimonials (commented out) -->
+            <!--
+            <section class="container testimonials" id="testimonialsSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">What Our Customers Say</h2><p class="section-sub">Real reviews from real halwa lovers</p></div>
+                </div>
+                <div class="testimonial-grid" id="testimonialGrid"></div>
+            </section>
+            -->
+
+            <!-- FAQ -->
+            <section class="container faq-section" id="faqSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">Frequently Asked Questions</h2><p class="section-sub">Everything you need to know</p></div>
+                </div>
+                <div class="faq-list" id="faqList"></div>
+            </section>
+
+            <!-- Contact -->
+            <section class="container contact-section" id="contactSection">
+                <div class="section-header">
+                    <div><h2 class="section-title">Get in Touch</h2><p class="section-sub">We'd love to hear from you</p></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's talk Swalwa</h3>
+                        <p>Have a question about our infusions, custom orders, or wholesale? Reach out to our team — we're here to help.</p>
+                        <div class="detail"><i class="fas fa-phone"></i> +91 98765 43210</div>
+                        <div class="detail"><i class="fas fa-envelope"></i> hello@swalwa.com</div>
+                        <div class="detail"><i class="fas fa-map-marker-alt"></i> Kochi, Kerala, India</div>
+                        <div class="detail"><i class="fas fa-clock"></i> Mon–Sat, 9:00 AM – 8:00 PM IST</div>
+                    </div>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required />
+                        <input type="email" placeholder="Your Email" required />
+                        <textarea placeholder="Your Message..." required></textarea>
+                        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Newsletter (commented out) -->
+            <!--
+            <section class="container newsletter" id="newsletterSection">
+                <h2>Join the Infusion Club</h2>
+                <p>Subscribe for exclusive offers, new flavour drops, and 10% off your first order.</p>
+                <div class="news-form">
+                    <input type="email" placeholder="Enter your email" id="newsletterEmail" />
+                    <button id="newsletterBtn">Subscribe <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </section>
+            -->
+
+        </div><!-- /homeView -->
+
+        <!-- ---------- PRODUCT DETAIL VIEW ---------- -->
+        <div class="container product-detail-view" id="productDetailView">
+            <button class="detail-back" id="detailBack"><i class="fas fa-arrow-left"></i> Back to Shop</button>
+            <div class="detail-grid" id="detailGrid">
+                <div class="detail-images">
+                    <div class="main-img" id="detailMainImg">
+                        <img src="" alt="Product image" id="detailMainImage" />
+                    </div>
+                    <div class="thumbnails" id="detailThumbnails"></div>
+                </div>
+                <div class="detail-info" id="detailInfo">
+                    <div class="detail-type" id="detailType"></div>
+                    <div class="detail-weight" id="detailWeight"></div>
+                    <h1 class="detail-name" id="detailName"></h1>
+                    <div class="detail-rating">
+                        <span class="stars" id="detailStars"></span>
+                        <span class="count" id="detailReviewCount"></span>
+                    </div>
+                    <div class="detail-price">
+                        <span class="current" id="detailPrice"></span>
+                        <span class="original" id="detailOriginalPrice"></span>
+                        <span class="discount" id="detailDiscount"></span>
+                    </div>
+                    <div class="detail-stock" id="detailStock">In Stock</div>
+                    <p class="detail-desc" id="detailDesc"></p>
+
+                    <div class="flavor-selector">
+                        <label>Flavour Infusion <i class="fas fa-wine-bottle" style="color:var(--gold);"></i></label>
+                        <div class="flavor-options" id="flavorOptions"></div>
+                        <div class="flavor-info" id="flavorInfo">Select an infusion to enhance your Swalwa.</div>
+                    </div>
+
+                    <div class="detail-qty-cart">
+                        <div class="qty-control">
+                            <button id="qtyDec">−</button>
+                            <span id="qtyValue">1</span>
+                            <button id="qtyInc">+</button>
+                        </div>
+                        <button class="btn-add-cart" id="detailAddCart"><i class="fas fa-bag-shopping"></i> Add to Cart</button>
+                        <button class="btn-wishlist-detail" id="detailWishlistBtn"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="detail-delivery">
+                        <i class="fas fa-truck-fast"></i>
+                        <span id="detailDelivery">Ships within 2–3 business days. Free shipping on orders above ₹999.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-related">
+                <h3 class="section-title" style="font-size:1.3rem;margin-bottom:14px;">You May Also Like</h3>
+                <div class="related-grid" id="relatedGrid"></div>
+            </div>
+        </div>
+
+        <!-- ---------- WISHLIST VIEW ---------- -->
+        <div class="container wishlist-view" id="wishlistView">
+            <button class="detail-back" id="wishlistBack"><i class="fas fa-arrow-left"></i> Back to Shop</button>
+            <h2 class="section-title" style="margin-bottom:16px;">Your Wishlist</h2>
+            <div class="wishlist-grid" id="wishlistGrid"></div>
+            <div class="wishlist-empty" id="wishlistEmpty">
+                <i class="fas fa-heart"></i>
+                <p>Your wishlist is empty. Start adding your favourite Swalwa!</p>
+            </div>
+        </div>
+
+    </main>
+    
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-bag" style="color:var(--gold);"></i> Your Cart</h2>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty.</p>
+                <p style="font-size:0.8rem;">Browse our collection and add some delicious Swalwa!</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-totals">
+                <div class="row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+                <div class="row"><span>Tax (8%)</span><span id="cartTax">₹0</span></div>
+                <div class="row"><span>Shipping</span><span id="cartShipping">₹0</span></div>
+                <div class="row total"><span>Grand Total</span><span id="cartGrandTotal">₹0</span></div>
+            </div>
+            <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </aside>
+
+    <!-- ============================================================
+    TOAST CONTAINER
+    ============================================================ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-family:var(--font-display);font-size:1.1rem;color:var(--gold-light);">
+                        <i class="fas fa-seedling"></i> Swalwa
+                    </h4>
+                    <p style="font-size:0.85rem;opacity:0.7;max-width:220px;line-height:1.7;">
+                        Premium Kerala-inspired halwa in Bites, Blocks &amp; Gift Boxes. Made with love, crafted for joy.
+                    </p>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <ul><li>Bites</li><li>Block</li><li>Gift Box</li><li>Premium</li><li>Infusions</li></ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul><li>FAQs</li><li>Shipping</li><li>Returns</li><li>Contact</li><li>Track Order</li></ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul><li>About Us</li><li>Our Story</li><li>Craftsmanship</li><li>Careers</li><li>Press</li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Swalwa. All rights reserved.</span>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+
+</body>
+</html>
